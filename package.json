@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "docz dev",
-    "build": "docz build"
+    "build": "DOCZ_BASE=/before-hook-docs/ docz build"
   },
   "repository": {
     "type": "git",
