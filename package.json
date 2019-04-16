@@ -1,0 +1,30 @@
+{
+  "name": "before-hook-docs.github.io",
+  "version": "1.0.0",
+  "description": "Documentation for [before-hook](https://github.com/slugs99/before-hook) npm package",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docz dev",
+    "build": "docz build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slugs99/before-hook-docs.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slugs99/before-hook-docs.github.io/issues"
+  },
+  "homepage": "https://github.com/slugs99/before-hook-docs.github.io#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "docz": "^1.0.0",
+    "docz-theme-default": "^1.0.0"
+  }
+}
