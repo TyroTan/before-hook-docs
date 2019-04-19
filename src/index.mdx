@@ -35,7 +35,7 @@ const toBeAuthenticatedHandler = async (event, context) => {
   return response(data);
 };
 
-const beforeHook = CreateInstance(); // provide configs if necessary
+const beforeHook = CreateInstance();
 const authenticatedHandler = beforeHook(toBeAuthenticatedHandler).use(
   AuthenticationMiddleware()
 );
@@ -73,12 +73,11 @@ const getColleagues = beforeHook(getColleaguesHandler)
   .use(
     BaseMiddleware({
       handler: async ({ getParams }) => {
-        const { event, setEvent } = getParams();
+        const [event] = getParams();
         const { socialNetworkingSiteId } = event.user; // assuming we have this field from "claims"
         const friends = await THIRD_PARTY_API.getFriendsById(socialNetworkingSiteId);
-        setEvent({
-          userFriends: friends
-        })
+
+        event.userFriends = friends; // mutate params directly
       }
     })
   );
